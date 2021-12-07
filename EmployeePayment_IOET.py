@@ -1,5 +1,5 @@
 #Importing algorithms
-import server as algorithms
+from app import server as algorithms
 
 #Main_func
 def employee_payment_func(employee_data_arg):

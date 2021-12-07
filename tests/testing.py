@@ -1,5 +1,7 @@
 import unittest
-import server as algorithms
+import sys
+sys.path.append("..")
+from app import server as algorithms
 from EmployeePayment_IOET import employee_payment_func
 
 class class_testing_employees(unittest.TestCase):
@@ -86,7 +88,7 @@ class class_testing_employees(unittest.TestCase):
 
 if __name__ == '__main__':
     #Open file and get list
-    with open("data.txt") as data_txt:
+    with open("../data.txt") as data_txt:
         employees_txt=data_txt.readlines()
     
     #Creating "class_employees" object 
