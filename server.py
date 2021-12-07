@@ -1,70 +1,67 @@
-class employees:
-    def __init__(self,employees_list):
-        self.employees={}
-        for employee in employees_list:
-            self.index=employee.index("=")
-            self.times=employee.replace("=",",")
-            self.timess=self.times.split(",")
-            self.employees.update({employee[:self.index]:self.timess[1:]})
+#Creating main class
+class class_employees:
     
-    def calculate_hours(self):
+    #Initializing Objects
+    def __init__(self,employees_list):
+        #Putting everything inside a dic
+        self.dic_employees={}
+        for el_employee in employees_list:
+            self.replace_equal=el_employee.replace("=",",")
+            self.dic_employees.update({el_employee[:el_employee.index("=")]:self.replace_equal.split(",")[1:]})
+        #Calling calculate_hours method for getting hours worked
+        self.dic_hours_worked=self.calculate_hours(self.dic_employees)
+        #Calling calculate_days method for getting days worked
+        self.dic_days_worked=self.calculate_days(self.dic_employees)
+        #Calling times method for getting times
+        self.time=self.times(self.dic_employees)
+    
+    def calculate_hours(self,dic_employees):
+        #Creating new dic
         self.employees_hours={}
-        for employee in self.employees:
-            self.employee_data=self.employees.get(employee)
+        #iterating over dic
+        for employee in dic_employees:
+            self.employee_data=dic_employees.get(employee)
             self.worked_hours=[]
+            #Update employee hours
             self.employees_hours.update({employee:self.worked_hours})
+            #iterating over hours
             for hours in self.employee_data:
                 self.start=hours[2:4]
                 self.end=hours[8:10]
+                #Each round we append hours to worked_hours list
                 self.worked_hours.append(int(self.end)-int(self.start))
+        #Return dic with hours worked
         return self.employees_hours
     
-    def calculate_days(self):
+    def calculate_days(self,dic_employees):
+        #Creating new dic
         self.employees_days={}
-        for employee in self.employees:
-            self.employee_data=self.employees.get(employee)
+        #iterating over dic
+        for employee in dic_employees:
+            self.employee_data=dic_employees.get(employee)
             self.worked_days=[]
+            #Update employee days
             self.employees_days.update({employee:self.worked_days})
+            #iterating over days
             for days in self.employee_data:
                 self.worked_days.append(days[:2])
+        #Return dic with days worked
         return self.employees_days
     
-    def calculate_time(self):
-        week_days=["MO", "TU", "WE", "TH", "FR"]
-        weekend_days=["SA", "SU"]
-        self.amount_to_paid={}
-        
-        for employee in self.employees:
-            self.hours_for_daytime=[]
-            self.employee_data=self.employees.get(employee)
-            
-            for day in week_days:
-                if day in self.employees_days.get(employee):
-                    self.index=self.employees_days.get(employee).index(day)
-                    self.hours=self.employees_hours.get(employee)
-                    self.employee_hours=self.hours[self.index]
-                    self.data=self.employee_data[self.index]
-                    self.start=self.data[2:4]
-                    self.end=self.data[8:10]
-                    if int(self.start) >= 0 and int(self.end) <= 9:
-                        self.hours_for_daytime.append(self.employee_hours*25)
-                    elif int(self.start) >= 9 and int(self.end) <= 18:
-                        self.hours_for_daytime.append(self.employee_hours*15)
-                    elif int(self.start) >= 18 and int(self.end) <= 24:
-                        self.hours_for_daytime.append(self.employee_hours*20)
-            for day in weekend_days:
-                if day in self.employees_days.get(employee):
-                    self.index=self.employees_days.get(employee).index(day)
-                    self.hours=self.employees_hours.get(employee)
-                    self.employee_hours=self.hours[self.index]
-                    self.data=self.employee_data[self.index]
-                    self.start=self.data[2:4]
-                    self.end=self.data[8:10]
-                    if int(self.start) >= 0 and int(self.end) <= 9:
-                        self.hours_for_daytime.append(self.employee_hours*30)
-                    elif int(self.start) >= 9 and int(self.end) <= 18:
-                        self.hours_for_daytime.append(self.employee_hours*20)
-                    elif int(self.start) >= 18 and int(self.end) <= 24:
-                        self.hours_for_daytime.append(self.employee_hours*25)
-            self.amount_to_paid.update({employee:self.hours_for_daytime})
-        return self.amount_to_paid
+    def times(self, dic_employees):
+        #Defining dics with times
+        self.dict_start_time={}
+        self.dict_end_time={}
+        #Itering over employees
+        for el_employee_name in dic_employees:
+            self.li_start_time=[]
+            self.li_end_time=[]
+            #Itering over times
+            for times in dic_employees.get(el_employee_name):
+                self.start=times[2:4]
+                self.end=times[8:10]
+                self.li_start_time.append(self.start)
+                self.li_end_time.append(self.end)
+            #Updating dicts
+            self.dict_start_time.update({el_employee_name:self.li_start_time})
+            self.dict_end_time.update({el_employee_name:self.li_end_time})
