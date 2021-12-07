@@ -76,8 +76,8 @@ I developed an algorithm for this problem.
 I used programming oriented objects and data structures to develop each algorithm.   
 After I end with algorithms, I started working with results (each result is an object),   
 I created a new .py file where I created a function, inside this function I put results together,  
-Finally I 
-
+**while I was coding I was testing** so after I did some tests and I comprobe that my program is working correct I did a second and third revision of my work,   
+and finally I publish it here.
 ## What were you thinking when you wrote this code?
 Modularizing, reutilizing and team work, I created classes and I develop the code in this way because
 I believe this is a good way to work in team and in the future easily can add upgrades to the program,
@@ -112,8 +112,8 @@ My approachs for this software were the next:
 -Create a good software following good practices, because while I was developing this software I was thinking in how in the future this software can be improve and how can I help other programmer to understand my code, you know **I was developing a solution** but this solution was not only for the customer, this solution was for everyone in the world, because **we are programmers so we create solutions** and that is what I was thinking while I was coding.   
 -Develop a reautilizable code   
 ## Explanation of my methodology   
-I based on an AGILE methodology, so I work developing, testing, thinking and doing the same again and again like in iterative-block, I based on AGILE because I believe that this is a great methodology for working at the same time with the customer, you know develop and show product to the client, then if the client wants to change something I can do it because I'm writing a code for one functionality, also I use the divide-and-conquer method, I love using this method because you can develop software part-by-part and that's great specially when you are working with teams, so my methodology approach to develop a software what can be supported, improved and entendible for programmers and also the best software that a customer could image.
-
+I called this methodology **THINK-DIVIDE-TEST-CODE** so for created this methodology, I based on an AGILE methodology,   
+so I work developing, testing, thinking and doing the same again and again like in iterative-block, I based on AGILE because I believe that this is a great methodology for working at the same time with the customer, you know develop and show product to the client, then if the client wants to change something I can do it because I'm writing a code for one functionality, also I use the divide-and-conquer method, I love using this method because you can develop software part-by-part and that's great specially when you are working with teams, so my methodology approach to develop a software what can be supported, improved and entendible for programmers and also the best software that a customer could image.
 ## How to execute the program? STEP-BY-STEP    
 So easy...   
 This program was created using python programming language, so first you need to install python in your operative system
